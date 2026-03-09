@@ -11,7 +11,7 @@ $total = 0;
 foreach($friends as $name =>$money) { 
 $total += $money;   
 if( $money >100) {  
-echo $name . " owes " . "$money" ." DH (High Debt)<br>";
+echo " <mark>$name</mark> owes $money DH (High Debt)<br>";
 } else
 {
 echo $name ." owes " . "$money" ." DH<br>";
