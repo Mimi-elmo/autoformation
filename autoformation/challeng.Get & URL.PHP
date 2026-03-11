@@ -52,4 +52,4 @@ foreach($products as $product){
 <h3>Sort</h3>
 
 <a href="?sort=asc">A-Z</a><br>
-<a href="?sort=desc">Z-A</a>
+<a href="?sort=desc">Z-A</a> 

@@ -2,62 +2,67 @@
 
 session_start();
 
-if (!isset($_SESSION['cart'])) {
+
+if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
 
-if (isset($_POST['item'])) {
+
+if(isset($_POST['item'])){
+
     $item = $_POST['item'];
 
-    if (!in_array($item, $_SESSION['cart'])) {
+
+
+    if(!in_array($item, $_SESSION['cart'])){
         $_SESSION['cart'][] = $item;
     }
+
 }
 
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Shopping Cart</title>
 </head>
+
 <body>
 
-<p>Cart: <?php echo count($_SESSION['cart']); ?> items</p>
+<h2>Cart: <?php echo count($_SESSION['cart']); ?> items</h2>
 
-<form method="post">
+<form method="POST">
 
-<div>
-<span>Item 1</span>
+<p>
+Item 1
 <button type="submit" name="item" value="Item 1">Add to Cart</button>
-</div>
+</p>
 
-<div>
-<span>Item 2</span>
+<p>
+Item 2
 <button type="submit" name="item" value="Item 2">Add to Cart</button>
-</div>
+</p>
 
-<div>
-<span>Item 3</span>
+<p>
+Item 3
 <button type="submit" name="item" value="Item 3">Add to Cart</button>
-</div>
+</p>
 
 </form>
 
 <h3>Items in Cart:</h3>
 
 <ul>
-<?php foreach ($_SESSION['cart'] as $cartItem) { ?>
-<li><?php echo htmlspecialchars($cartItem); ?></li>
-<?php } ?>
+
+<?php
+foreach($_SESSION['cart'] as $cartItem){
+    echo "<li>$cartItem</li>";
+}
+?>
+
 </ul>
 
 </body>
 </html>
-
-
-
-
-
-
-
